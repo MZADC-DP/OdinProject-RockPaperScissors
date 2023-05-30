@@ -62,15 +62,8 @@ function game ()
         return "No one wins";
     }
 
-    console.log(playGame);
-    console.log(playGame);
-    console.log(playGame);
-    console.log(playGame);
-    console.log(playGame);
-
-
 
 }
 
-console.log(game());
+// console.log(game());
 

@@ -31,3 +31,24 @@ Lession Overview
         <body>
             <button onclick="myFunction()">Click me</button>
         </body>
+
+
+Clean Code
+
+    Lesson Overview
+
+    1. Distinguish hard to read code from esay to read code.
+        Write proper naming conventions for variables and function names.
+        Use proper indentation.
+        Write good comments.
+
+    2. Use Programming Principles to write code cleaner.
+
+    3. Write Good Comments.
+
+
+Installed Node.Js - Completed on 22.05.2023
+
+Fundamentals Part 4
+
+    

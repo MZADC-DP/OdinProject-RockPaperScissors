@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Rock Paper Scissors</title>
-    <script src = "script.js">
+    <script src="script.js">
     </script>
 </head>
+
 <body>
 
+
+    <div id="container">
+        <button id = 'rock'>ROCK</button>
+
+        <button id = 'paper'>PAPER</button>
+
+        <button id = 'scissor'>SCISSOR</button>
+    </div>
+
+
+    <script>
+        const container = document.querySelector('#container');
+        const tracker = document.createElement('div');
+        tracker.classList.add('tracker');
+        tracker.style.color = 'red';
+        tracker.textContent = 'Hello World - Point Tracker';
+
+        container.appendChild(tracker);
+
+        const rockBtn = document.querySelector('#rock');
+        const paperBtn = document.querySelector('#paper');
+        const scissorBtn = document.querySelector('#scissor');
+
+        rockBtn.onclick = () => alert("Rock");
+        paperBtn.onclick = () => alert("Paper");
+        scissorBtn.onclick = () => alert("Scissor");
+    </script>
 </body>
 
 </html>
