@@ -11,11 +11,11 @@
 
 
     <div id="container">
-        <button id = 'rock'>ROCK</button>
+        <button id='rock'>ROCK</button>
 
-        <button id = 'paper'>PAPER</button>
+        <button id='paper'>PAPER</button>
 
-        <button id = 'scissor'>SCISSOR</button>
+        <button id='scissor'>SCISSOR</button>
     </div>
 
 
@@ -24,17 +24,77 @@
         const tracker = document.createElement('div');
         tracker.classList.add('tracker');
         tracker.style.color = 'red';
-        tracker.textContent = 'Hello World - Point Tracker';
-
-        container.appendChild(tracker);
 
         const rockBtn = document.querySelector('#rock');
         const paperBtn = document.querySelector('#paper');
         const scissorBtn = document.querySelector('#scissor');
 
-        rockBtn.onclick = () => alert("Rock");
-        paperBtn.onclick = () => alert("Paper");
-        scissorBtn.onclick = () => alert("Scissor");
+        let computerScore = 0;
+        let playerScore = 0;
+
+        function updateScores() {
+            tracker.textContent = 'Computer Score: ' + computerScore + ' Player Score: ' + playerScore;
+
+            container.appendChild(tracker);
+        }
+
+        function displayWinner() {
+
+
+            if(computerScore == 5)
+            {
+                tracker.textContent = 'Computer Wins';
+            }
+            else if (playerScore == 5) {
+                tracker.textContent = "Player Wins";
+            }
+
+            container.appendChild(tracker);
+        }
+
+        function disableBtn() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorBtn.disabled = true;
+        }
+
+        function playGame(event) {
+            let rps = event.target.id;
+            let computerChoice = getComputerChoice();
+            let result = getResult(rps, computerChoice);
+
+            if (result == "Tied!") {
+                computerScore++;
+                playerScore++;
+            }
+            else if (result == "Computer") {
+                computerScore++;
+            }
+            else {
+                playerScore++;
+            }
+
+            if (computerScore == 5) {
+                console.log("Computer Wins !");
+                disableBtn();
+            }
+            else if (playerScore == 5) {
+                console.log("Player Wins !");
+                disableBtn();
+            }
+
+            if(computerScore != 5 && playerScore != 5)
+                updateScores();
+
+            displayWinner();
+        }
+
+        rockBtn.addEventListener('click', (event) => playGame(event));
+        scissorBtn.addEventListener("click", (event) => playGame(event));
+        paperBtn.addEventListener("click", (event) => playGame(event));
+
+
+
     </script>
 </body>
 
